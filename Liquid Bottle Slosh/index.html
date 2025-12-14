@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Water Bottle Slosh</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#070b14">
+
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="bottle" id="bottle">
+      <canvas id="c"></canvas>
+      <div class="cap"></div>
+      <div class="neck"></div>
+      <div class="glass"></div>
+      <div class="inner"></div>
+      <div class="shineA"></div>
+      <div class="shineB"></div>
+    </div>
+    <div class="panel">
+      <span class="mode" id="modeLabel">Mode: Pointer</span>
+      <div class="group">Slosh <input id="strength" type="range" min="0" max="100" value="60"></div>
+      <div class="group">Fill <input id="fill" type="range" min="20" max="85" value="58"></div>
+      <div class="group">Sensitivity <input id="sens" type="range" min="50" max="250" value="160"></div>
+      <div class="group">Color <input id="color" type="color" value="#0a8bff"></div>
+
+      <button id="enableTilt">Enable device tilt</button>
+      <button id="tiltMode">Keyboard tilt mode</button>
+      <button id="enableSound">Enable water sound</button>
+    </div>
+
+    <div class="hint">
+      Pointer: move on the bottle. Tilt: works on some laptops/2-in-1 + phones. Keyboard tilt: use WASD/Arrow keys.
+    </div>
+  </div>
+
+
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js");
+  }
+</script>
+</body>
+
+</html>
